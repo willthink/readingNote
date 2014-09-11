@@ -1,0 +1,3 @@
+null is unpleasantly ambiguous, it can mean success and failed.
+
+http://stackoverflow.com/questions/271526/avoiding-null-statements-in-java
