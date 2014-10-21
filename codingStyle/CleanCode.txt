@@ -2,11 +2,11 @@ Clean Code Reading Notes
 
 Day 1 For reading clean code
 1. Bad code does matter. Later equals never.
-More people don't really means more productive, since new people may mess up the code structure
+    More people don't really means more productive, since new people may mess up the code structure
 
 2. The only way to make the deadline -- the only way to go fast -- is to keep the code as clean as possible at all times
 
-3.Bad code tempts the mess to grow! When others change bad code, they tend tomake it worse.
+3.Bad code tempts the mess to grow! When others change bad code, they tend to make it worse.
 
 Day 2 For reading Clean Code
 Memory Leak
@@ -15,19 +15,18 @@ Race Condition
 These are some thing can pay attention on clean code
 
 
-Clean code exhibits close attention todetail.
+Clean code exhibits close attention to detail.
 
-Clean code shouldread like well-written prose.
+Clean code should read like well-written prose.
 
 Clean code does ONE thing well!
 
-Bad code tries to dotoo much, it has muddled intent and ambiguity of purpose. Clean code is focused
-Eachfunction, each class, each module exposes a single-minded attitude that remains entirelyundistracted, and unpolluted, by the surrounding details.
+Bad code tries to do too much, it has muddled intent and ambiguity of purpose. Clean code is focused
+Each function, each class, each module exposes a single-minded attitude that remains entirely undistracted, and unpolluted, by the surrounding details.
 
 Day 3
 The name of a variable, function, or class, should answer all the big questions. It
-should tell you why it exists, what it does, and how it is used. If a name requires a com-
-ment, then the name does not reveal its intent.
+should tell you why it exists, what it does, and how it is used. If a name requires a comment, then the name does not reveal its intent.
 
 NO Disinformative
 Programmers must avoid leaving false clues that obscure the meaning of code. --disinformative
@@ -71,7 +70,7 @@ of a class. A class name should not be a verb
 Methods Names
 Methods should have verb or verb phrase names like postPayment , deletePage , or save .
 Accessors, mutators, and predicates should be named for their value and prefixed with get ,
-set , and is according to the javabean standard.
+set , and is according to the java bean standard.
 
 
 When constructors are overloaded, use static factory methods with names that
@@ -103,8 +102,8 @@ so on should be one line long.
 
 Do One Thing
 
-F UNCTIONS SHOULD DO ONE THING . T HEY SHOULD DO IT WELL .
-T HEY SHOULD DO IT ONLY
+FUNCTIONS SHOULD DO ONE THING . THEY SHOULD DO IT WELL .
+THEY SHOULD DO IT ONLY
 
 One Level of Abstraction per Function
 
@@ -113,7 +112,7 @@ abstraction, such as getHtml() ; others that are at an intermediate level of abs
 as: String pagePathName = PathParser.render(pagePath) ; and still others that are remark-
 ably low level, such as: .append("\n") .
 
-Reading Code from Top to Bottom: The Stepdown Rule
+Reading Code from Top to Bottom: The Step down Rule
 
 
 Day 5
@@ -122,8 +121,7 @@ enigmatic name. A long descriptive name is better than a long descriptive commen
 
 Arguments
 The ideal number of arguments for a function is
-zero (niladic).
-
+zero.
 
 The proper use of comments is to compensate for our failure to express ourself in code.
 
@@ -136,23 +134,27 @@ If you can't make non-parameter function, better pass single parameter
 
 A function with return value and single parameter can be "Ask a question about parameter, Or operating the argument"
 
-You may beasking a question about that argument, as in boolean fileExists(“MyFile”) . Or you may be
+You may be asking a question about that argument, as in boolean fileExists(“MyFile”) . Or you may be
 operating on that argument, transforming it into something else and returning it. For
 example, InputStream fileOpen(“MyFile”) transforms a file name String into an
-InputStream return value. These two uses are what readers expect when they see a func-
-tion.
+InputStream return value. These two uses are what readers expect when they see a function.
 
 A function with void type and single parameter can be an "EVENT"
 
-It should be very clear to the reader that this is an event. Choose
-names and contexts carefully.
+It should be very clear to the reader that this is an event. Choose names and contexts carefully.
 
 Try to avoid any monadic functions that don’t follow these forms, for example, void
+
 includeSetupPageInto(StringBuffer pageText) .Using an output argument instead of a
+
 return value for a transformation is confusing. If a function is going to transform its input
+
 argument, the transformation should appear as the return value. Indeed, StringBuffer
+
 transform(StringBuffer in) is better than void transform-(StringBuffer out) , even if the
+
 implementation in the first case simply returns the input argument. At least it still follows
+
 the form of a transformation.
 
 Parameter with Flag is BAD, because this indicates the function is doing two things
