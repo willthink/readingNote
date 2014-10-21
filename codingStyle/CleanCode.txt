@@ -159,5 +159,6 @@ Parameter with Flag is BAD, because this indicates the function is doing two thi
 
 Functions should either do something or answer something, but not both.
 
-
+Reference Clean Code:A Handbook of Agile Software Craftsmanship
+http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
 
