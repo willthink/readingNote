@@ -1,71 +1,29 @@
 Clean Code Reading Notes
 
+Day 1 For reading clean code
+1. Bad code does matter. Later equals never.
+More people don't really means more productive, since new people may mess up the code structure
 
-The proper use of comments is to compensate for our failure to express ourself in code.
+2. The only way to make the deadline -- the only way to go fast -- is to keep the code as clean as possible at all times
 
-Inaccurate comments are far worse than no comments at all.
+3.Bad code tempts the mess to grow! When others change bad code, they tend tomake it worse.
 
-Rather than spend your time writing the comments that explain the mess you’ve made, spend it cleaning that mess.
+Day 2 For reading Clean Code
+Memory Leak
+Inconsistent naming
+Race Condition
+These are some thing can pay attention on clean code
 
-Day 6
-If you can't make non-parameter function, better pass single parameter
 
-A function with return value and single parameter can be "Ask a question about parameter, Or operating the argument"
+Clean code exhibits close attention todetail.
 
-You may beasking a question about that argument, as in boolean fileExists(“MyFile”) . Or you may be
-operating on that argument, transforming it into something else and returning it. For
-example, InputStream fileOpen(“MyFile”) transforms a file name String into an
-InputStream return value. These two uses are what readers expect when they see a func-
-tion.
+Clean code shouldread like well-written prose.
 
-A function with void type and single parameter can be an "EVENT"
+Clean code does ONE thing well!
 
-It should be very clear to the reader that this is an event. Choose
-names and contexts carefully.
+Bad code tries to dotoo much, it has muddled intent and ambiguity of purpose. Clean code is focused
+Eachfunction, each class, each module exposes a single-minded attitude that remains entirelyundistracted, and unpolluted, by the surrounding details.
 
-Try to avoid any monadic functions that don’t follow these forms, for example, void
-includeSetupPageInto(StringBuffer pageText) .Using an output argument instead of a
-return value for a transformation is confusing. If a function is going to transform its input
-argument, the transformation should appear as the return value. Indeed, StringBuffer
-transform(StringBuffer in) is better than void transform-(StringBuffer out) , even if the
-implementation in the first case simply returns the input argument. At least it still follows
-the form of a transformation.
-
-Parameter with Flag is BAD, because this indicates the function is doing two things
-
-Functions should either do something or answer something, but not both.
-Day 5
-Don’t be afraid to make a name long. A long descriptive name is better than a short
-enigmatic name. A long descriptive name is better than a long descriptive comment.
-
-Arguments
-The ideal number of arguments for a function is
-zero (niladic).
-Day 4
-Functions
-
-Small !
-
-The first rule of functions is that they should be small.
-
-Functions should hardly ever be 20 lines long
-
-This implies that the blocks within if statements, else statements, while statements, and
-so on should be one line long.
-
-Do One Thing
-
-F UNCTIONS SHOULD DO ONE THING . T HEY SHOULD DO IT WELL .
-T HEY SHOULD DO IT ONLY
-
-One Level of Abstraction per Function
-
-There are concepts in there that are at a very high level of
-abstraction, such as getHtml() ; others that are at an intermediate level of abstraction, such
-as: String pagePathName = PathParser.render(pagePath) ; and still others that are remark-
-ably low level, such as: .append("\n") .
-
-Reading Code from Top to Bottom: The Stepdown Rule
 Day 3
 The name of a variable, function, or class, should answer all the big questions. It
 should tell you why it exists, what it does, and how it is used. If a name requires a com-
@@ -129,25 +87,77 @@ have fetch , retrieve, and get as equivalent methods of different classes.
 Avoid using the same word for two purposes.
 
 Add meaningful context
-Day 2 For reading Clean Code
-Memory Leak
-Inconsistent naming
-Race Condition
-These are some thing can pay attention on clean code
 
 
-Clean code exhibits close attention todetail.
+Day 4
+Functions
 
-Clean code shouldread like well-written prose.
+Small !
 
-Clean code does ONE thing well!
+The first rule of functions is that they should be small.
 
-Bad code tries to dotoo much, it has muddled intent and ambiguity of purpose. Clean code is focused
-Eachfunction, each class, each module exposes a single-minded attitude that remains entirelyundistracted, and unpolluted, by the surrounding details.
-Day 1 For reading clean code
-1. Bad code does matter. Later equals never.
-More people don't really means more productive, since new people may mess up the code structure
+Functions should hardly ever be 20 lines long
 
-2. The only way to make the deadline -- the only way to go fast -- is to keep the code as clean as possible at all times
+This implies that the blocks within if statements, else statements, while statements, and
+so on should be one line long.
 
-3.Bad code tempts the mess to grow! When others change bad code, they tend tomake it worse.
+Do One Thing
+
+F UNCTIONS SHOULD DO ONE THING . T HEY SHOULD DO IT WELL .
+T HEY SHOULD DO IT ONLY
+
+One Level of Abstraction per Function
+
+There are concepts in there that are at a very high level of
+abstraction, such as getHtml() ; others that are at an intermediate level of abstraction, such
+as: String pagePathName = PathParser.render(pagePath) ; and still others that are remark-
+ably low level, such as: .append("\n") .
+
+Reading Code from Top to Bottom: The Stepdown Rule
+
+
+Day 5
+Don’t be afraid to make a name long. A long descriptive name is better than a short
+enigmatic name. A long descriptive name is better than a long descriptive comment.
+
+Arguments
+The ideal number of arguments for a function is
+zero (niladic).
+
+
+The proper use of comments is to compensate for our failure to express ourself in code.
+
+Inaccurate comments are far worse than no comments at all.
+
+Rather than spend your time writing the comments that explain the mess you’ve made, spend it cleaning that mess.
+
+Day 6
+If you can't make non-parameter function, better pass single parameter
+
+A function with return value and single parameter can be "Ask a question about parameter, Or operating the argument"
+
+You may beasking a question about that argument, as in boolean fileExists(“MyFile”) . Or you may be
+operating on that argument, transforming it into something else and returning it. For
+example, InputStream fileOpen(“MyFile”) transforms a file name String into an
+InputStream return value. These two uses are what readers expect when they see a func-
+tion.
+
+A function with void type and single parameter can be an "EVENT"
+
+It should be very clear to the reader that this is an event. Choose
+names and contexts carefully.
+
+Try to avoid any monadic functions that don’t follow these forms, for example, void
+includeSetupPageInto(StringBuffer pageText) .Using an output argument instead of a
+return value for a transformation is confusing. If a function is going to transform its input
+argument, the transformation should appear as the return value. Indeed, StringBuffer
+transform(StringBuffer in) is better than void transform-(StringBuffer out) , even if the
+implementation in the first case simply returns the input argument. At least it still follows
+the form of a transformation.
+
+Parameter with Flag is BAD, because this indicates the function is doing two things
+
+Functions should either do something or answer something, but not both.
+
+
+
