@@ -1,0 +1,153 @@
+Clean Code Reading Notes
+
+
+The proper use of comments is to compensate for our failure to express ourself in code.
+
+Inaccurate comments are far worse than no comments at all.
+
+Rather than spend your time writing the comments that explain the mess you’ve made, spend it cleaning that mess.
+
+Day 6
+If you can't make non-parameter function, better pass single parameter
+
+A function with return value and single parameter can be "Ask a question about parameter, Or operating the argument"
+
+You may beasking a question about that argument, as in boolean fileExists(“MyFile”) . Or you may be
+operating on that argument, transforming it into something else and returning it. For
+example, InputStream fileOpen(“MyFile”) transforms a file name String into an
+InputStream return value. These two uses are what readers expect when they see a func-
+tion.
+
+A function with void type and single parameter can be an "EVENT"
+
+It should be very clear to the reader that this is an event. Choose
+names and contexts carefully.
+
+Try to avoid any monadic functions that don’t follow these forms, for example, void
+includeSetupPageInto(StringBuffer pageText) .Using an output argument instead of a
+return value for a transformation is confusing. If a function is going to transform its input
+argument, the transformation should appear as the return value. Indeed, StringBuffer
+transform(StringBuffer in) is better than void transform-(StringBuffer out) , even if the
+implementation in the first case simply returns the input argument. At least it still follows
+the form of a transformation.
+
+Parameter with Flag is BAD, because this indicates the function is doing two things
+
+Functions should either do something or answer something, but not both.
+Day 5
+Don’t be afraid to make a name long. A long descriptive name is better than a short
+enigmatic name. A long descriptive name is better than a long descriptive comment.
+
+Arguments
+The ideal number of arguments for a function is
+zero (niladic).
+Day 4
+Functions
+
+Small !
+
+The first rule of functions is that they should be small.
+
+Functions should hardly ever be 20 lines long
+
+This implies that the blocks within if statements, else statements, while statements, and
+so on should be one line long.
+
+Do One Thing
+
+F UNCTIONS SHOULD DO ONE THING . T HEY SHOULD DO IT WELL .
+T HEY SHOULD DO IT ONLY
+
+One Level of Abstraction per Function
+
+There are concepts in there that are at a very high level of
+abstraction, such as getHtml() ; others that are at an intermediate level of abstraction, such
+as: String pagePathName = PathParser.render(pagePath) ; and still others that are remark-
+ably low level, such as: .append("\n") .
+
+Reading Code from Top to Bottom: The Stepdown Rule
+Day 3
+The name of a variable, function, or class, should answer all the big questions. It
+should tell you why it exists, what it does, and how it is used. If a name requires a com-
+ment, then the name does not reveal its intent.
+
+NO Disinformative
+Programmers must avoid leaving false clues that obscure the meaning of code. --disinformative
+
+Do not refer to a grouping of accounts as an accountList unless it’s actually a List .
+The word list means something specific to programmers. -- disinformative
+
+Using inconsistent spellings is --disinformation
+
+It is not sufficient to add number series or noise words, even though the compiler is
+satisfied. If names must be different, then they should also mean something different.
+
+Noise words are redundant. The word variable should never appear in a variable
+name. The word table should never appear in a table name.
+
+In the absence of specific conventions, the variable moneyAmount is indistinguishable
+from money , customerInfo is indistinguishable from customer , accountData is indistinguish-
+able from account , and theMessage is indistinguishable from message . Distinguish names in
+such a way that the reader knows what the differences offer.
+
+Use Pronounceable Names
+
+
+Use Searchable Names
+Single-letter names and numeric constants have a particular problem in that they are not
+easy to locate across a body of text.
+
+My personal preference is that single-letter names can ONLY be used as local vari-
+ables inside short methods. The length of a name should correspond to the size of its scope
+
+Others
+One difference between a smart programmer and a professional programmer is that
+the professional understands that clarity is king. Professionals use their powers for good
+and write code that others can understand.
+
+Class Names
+Classes and objects should have noun or noun phrase names like Customer , WikiPage ,
+Account , and AddressParser . Avoid words like Manager , Processor , Data , or Info in the name
+of a class. A class name should not be a verb
+
+Methods Names
+Methods should have verb or verb phrase names like postPayment , deletePage , or save .
+Accessors, mutators, and predicates should be named for their value and prefixed with get ,
+set , and is according to the javabean standard.
+
+
+When constructors are overloaded, use static factory methods with names that
+describe the arguments. For example,
+Complex fulcrumPoint = Complex.FromRealNumber(23.0);
+is generally better than
+Complex fulcrumPoint = new Complex(23.0);
+
+Pick one word per concept
+Pick one word for one abstract concept and stick with it. For instance, it’s confusing to
+have fetch , retrieve, and get as equivalent methods of different classes.
+
+Avoid using the same word for two purposes.
+
+Add meaningful context
+Day 2 For reading Clean Code
+Memory Leak
+Inconsistent naming
+Race Condition
+These are some thing can pay attention on clean code
+
+
+Clean code exhibits close attention todetail.
+
+Clean code shouldread like well-written prose.
+
+Clean code does ONE thing well!
+
+Bad code tries to dotoo much, it has muddled intent and ambiguity of purpose. Clean code is focused
+Eachfunction, each class, each module exposes a single-minded attitude that remains entirelyundistracted, and unpolluted, by the surrounding details.
+Day 1 For reading clean code
+1. Bad code does matter. Later equals never.
+More people don't really means more productive, since new people may mess up the code structure
+
+2. The only way to make the deadline -- the only way to go fast -- is to keep the code as clean as possible at all times
+
+3.Bad code tempts the mess to grow! When others change bad code, they tend tomake it worse.
